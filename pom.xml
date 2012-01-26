@@ -6,9 +6,6 @@
 	<name>Jython client package</name>
 	<version>0.4-SNAPSHOT</version>
 
-	<properties>
-		<grisu.version>0.4-rc13-SNAPSHOT</grisu.version>
-	</properties>
 	
 	<repositories>
 		<repository>
@@ -25,36 +22,9 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>bestgrid.public.snapshot</id>
-			<url>http://code.ceres.auckland.ac.nz/nexus/content/groups/public-snapshots/
-			</url>
-			<releases>
-				<enabled>false</enabled>
-				<updatePolicy>never</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-		</repository>
 
 	</repositories>	
 	
-	<distributionManagement>
-		<repository>
-			<name>BeSTGRID Releases Repository</name>
-			<id>bestgrid.release</id>
-			<url>http://code.ceres.auckland.ac.nz/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>bestgrid.snapshot</id>
-			<name>BeSTGRID Snapshots Repository</name>
-			<url>http://code.ceres.auckland.ac.nz/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -132,9 +102,9 @@
 		<url>http://dev.ceres.auckland.ac.nz/hudson/job/Grisu-Jython-SNAPSHOT/</url>
 	</ciManagement>
 	<scm>
-		<connection>scm:git:git://github.com/grisu/grisu-jython.git</connection>
-		<developerConnection>scm:git:git@github.com:grisu/grisu-jython.git</developerConnection>
-		<url>https://github.com/grisu/grisu-jython/tree/master</url>
+		<connection>scm:git:git://github.com/grisu/grython.git</connection>
+		<developerConnection>scm:git:git@github.com:grisu/grython.git</developerConnection>
+		<url>https://github.com/grisu/grython/tree/master</url>
 	</scm>
 	<organization>
 		<name>Grisu open source project</name>
@@ -146,26 +116,7 @@
 				<directory>src/main/jython</directory>
 			</resource>
 		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				  <groupId>org.apache.maven.plugins</groupId>
-				  <artifactId>maven-release-plugin</artifactId>
-				  <version>2.1</version>
-				  <configuration>
-					    <autoVersionSubmodules>true</autoVersionSubmodules>
-					    <pushChanges>false</pushChanges>
-					    <localCheckout>true</localCheckout>
-				  </configuration>
-			</plugin>		
-			
+		<plugins>		
 			<plugin>
 				<groupId>com.google.code.maven-replacer-plugin</groupId>
 				<artifactId>maven-replacer-plugin</artifactId>
@@ -191,21 +142,7 @@
 					<!-- replace it with the maven project version -->
 					<value>${project.version}</value>
 				</configuration>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.2</version>
-				<configuration>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<pushChanges>true</pushChanges>
-					<localCheckout>true</localCheckout>
-					<tagNameFormat>@{project.version}</tagNameFormat>
-					<releaseProfiles>man,deb,rpm</releaseProfiles>
-
-				</configuration>
-			</plugin>				
+			</plugin>	
 			
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -226,7 +163,7 @@
 									<mainClass>grisu.jython.JythonStartWrapper</mainClass>
 								</manifest>
 								<manifestEntries>
-									<Class-Path>bcprov.jar bcprov-jdk15-145.jar local-backend-dev.jar local-backend.jar
+									<Class-Path>bcprov.jar bcprov-jdk15-145.jar local-backend.jar
 									</Class-Path>
 								</manifestEntries>
 							</archive>
@@ -241,38 +178,7 @@
 	</build>
 
 	<profiles>
-		<profile>
-			<id>sign</id>
-			<activation>
-				<property>
-					<name>BUILD_NUMBER</name>
-				</property>
-			</activation>
 
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jarsigner-plugin</artifactId>
-						<version>1.2</version>
-						<executions>
-							<execution>
-								<id>sign</id>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<alias>grisu</alias>
-							<storepass>FxAKs3p6</storepass>
-							<keypass>FxAKs3p6</keypass>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-
-		</profile>
 
 		<profile>
 			<id>deb</id>
@@ -488,4 +394,9 @@
 
 	</profiles>
 
+	<parent>
+		<groupId>nz.org.nesi</groupId>
+		<artifactId>nesi</artifactId>
+		<version>0.3</version>
+	</parent>
 </project>
