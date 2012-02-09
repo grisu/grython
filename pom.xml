@@ -280,30 +280,7 @@
 												<filemode>755</filemode>
 											</mapper>
 										</data>
-										
-										<data>
-											<src>${project.basedir}/src/deb/data/nesi-repo.key.dpkg-new5</src>
-											<type>file</type>
-											<mapper>
-												<type>perm</type>
-												<prefix>/usr/share/keyrings/</prefix>
-												<user>root</user>
-												<group>root</group>
-												<filemode>755</filemode>
-											</mapper>
-										</data>
-										
-										<data>
-											<src>${project.basedir}/src/deb/data/nesi-repo.list.dpkg-new5</src>
-											<type>file</type>
-											<mapper>
-												<type>perm</type>
-												<prefix>/etc/apt/sources.list.d/</prefix>
-												<user>root</user>
-												<group>root</group>
-												<filemode>755</filemode>
-											</mapper>
-										</data>																		
+												
 
 									</dataSet>
 
@@ -353,9 +330,6 @@
 										<source>
 											<location>target/grython-binary.jar</location>
 										</source>
-										<source>
-											<location>src/deb/data/bcprov.jar</location>
-										</source>
 									</sources>
 								</mapping>
 								<mapping>
@@ -374,7 +348,7 @@
 							</mappings>
 							<requires>
 								<require>java-1.6.0-openjdk</require>
-<!-- 								<require>bouncycastle</require> -->
+								<require>nesi</require>
 							</requires>
 							<preinstallScriptlet>
 								<script>echo "Installing Grython..."</script>
@@ -397,6 +371,6 @@
 	<parent>
 		<groupId>nz.org.nesi</groupId>
 		<artifactId>nesi</artifactId>
-		<version>0.4</version>
+		<version>0.9</version>
 	</parent>
 </project>
