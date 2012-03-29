@@ -3,8 +3,8 @@
 
 	<artifactId>grython</artifactId>
 	<groupId>grisu.frontend</groupId>
-	<name>Jython client package</name>
-	<version>0.4-rc3-SNAPSHOT</version>
+	<name>Grython</name>
+	<version>0.5-SNAPSHOT</version>
 
 	
 	<repositories>
@@ -22,7 +22,6 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
-
 	</repositories>	
 	
 
@@ -33,52 +32,14 @@
 			<version>${grisu.version}</version>
 			<type>jar</type>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>jython</groupId> -->
-		<!-- <artifactId>jython</artifactId> -->
-		<!-- <version>2.5.1</version> -->
-		<!-- <type>jar</type> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>jython</groupId> -->
-		<!-- <artifactId>jythonLib</artifactId> -->
-		<!-- <version>2.5.1</version> -->
-		<!-- <type>jar</type> -->
-		<!-- </dependency> -->
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.jgoodies</groupId> -->
-		<!-- <artifactId>forms</artifactId> -->
-		<!-- <version>1.2.1</version> -->
-		<!-- <type>jar</type> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.jidesoft</groupId> -->
-		<!-- <artifactId>jide-oss</artifactId> -->
-		<!-- <version>2.9.1</version> -->
-		<!-- <type>jar</type> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.swinglabs</groupId> -->
-		<!-- <artifactId>swingx</artifactId> -->
-		<!-- <version>1.6</version> -->
-		<!-- <type>jar</type> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>furbelow</groupId>
 			<artifactId>furbelow</artifactId>
 			<version>1.0</version>
 			<scope>compile</scope>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>grisu</groupId> -->
-		<!-- <artifactId>grisu-core</artifactId> -->
-		<!-- <version>${grisu.dependency.version}</version> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
+
 		<dependency>
 			<groupId>bouncycastle</groupId>
 			<artifactId>bcprov-jdk15</artifactId>
@@ -90,16 +51,15 @@
 	</dependencies>
 
 
-	<description>The Grisu Jython wrapper is a Java package that contains both the Grisu client library and a version of the Jython interpreter. Basically, it allows you to access all the convenience (Java) methods and objects of the Grisu client library via Python syntax. 
-</description>
-	<url>https://github.com/grisu/grisu-jython</url>
+	<description>Grython is a Java package that contains both the Grisu client library and a version of the Jython interpreter. Basically, it allows you to access all the convenience (Java) methods and objects of the Grisu client library via Python syntax.</description>
+	<url>https://github.com/grisu/grython</url>
 	<issueManagement>
 		<system>Github</system>
-		<url>https://github.com/grisu/grisu-jython/issues</url>
+		<url>https://github.com/grisu/grython/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Hudson</system>
-		<url>http://dev.ceres.auckland.ac.nz/hudson/job/Grisu-Jython-SNAPSHOT/</url>
+		<system>Jenkins</system>
+		<url>https://code.ceres.auckland.ac.nz/jenkins/job/Grython-SNAPSHOT/1/</url>
 	</ciManagement>
 	<scm>
 		<connection>scm:git:git://github.com/grisu/grython.git</connection>
@@ -371,6 +331,9 @@
 	<parent>
 		<groupId>nz.org.nesi</groupId>
 		<artifactId>nesi</artifactId>
-		<version>0.9</version>
+		<version>0.11</version>
 	</parent>
+	<properties>
+		<grisu.version>0.5-SNAPSHOT</grisu.version>
+	</properties>
 </project>

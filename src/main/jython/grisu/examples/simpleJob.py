@@ -9,9 +9,9 @@ from grisu.frontend.model.job import JobObject
 import sys
 from grisu.jcommons.utils import HttpProxyManager
 
-HttpProxyManager.useSystemHttpProxy()
 
-si = LoginManager.loginCommandline("BeSTGRID-DEV")
+
+si = LoginManager.loginCommandline("BeSTGRID")
     
     
 # create the job object
