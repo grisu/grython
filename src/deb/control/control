@@ -5,4 +5,4 @@ Priority: optional
 Architecture: all
 Depends: java-runtime,libbcprov-java
 Maintainer: Markus Binsteiner <m.binsteiner@auckland.ac.nz>
-Description: Grisu commandline frontend
+Description: Jython wrapper around the Grisu client library in order to enable job submissions using jython scripts
