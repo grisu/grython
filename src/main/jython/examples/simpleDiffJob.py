@@ -1,3 +1,4 @@
+#! /usr/bin/grython -b nesi
 '''
 
 A simple job submission to show how to submit a job with input files.
