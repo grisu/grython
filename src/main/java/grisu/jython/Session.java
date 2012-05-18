@@ -138,13 +138,13 @@ public class Session {
 						myLogger.debug("Logged in.");
 					} else {
 						System.err
-								.println("No login session exists. Use the '-l' option with grython if you want interactive login.");
+						.println("No login session exists. Use the '-l' option with grython if you want interactive login.");
 						System.exit(1);
 					}
 				}
 
 				String localProxyPath = client.getSessionManagement()
-						.local_proxy_path();
+						.proxy_path();
 				myLogger.debug("Credential suposed to be: " + localProxyPath);
 
 				Credential c = Credential.load(localProxyPath);
