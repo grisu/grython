@@ -7,7 +7,7 @@ Created on 11/12/2009
 '''
 
 # this next one gets you the serviceinterface created duringn startup, so you don't have to worry about it
-from grisu.jython.Session import serviceInterface as si
+from grisu.Grython import serviceInterface as si
 from grisu.model import GrisuRegistryManager
 import sys
 

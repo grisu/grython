@@ -8,7 +8,7 @@ Created on 17/11/2009
 @author: markus
 '''
 
-from grisu.jython.Session import serviceInterface as si
+from grisu.Grython import serviceInterface as si
 from grisu.frontend.model.job import JobObject
 from grisu.model import FileManager
 import sys

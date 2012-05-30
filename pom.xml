@@ -33,13 +33,6 @@
 			<type>jar</type>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>furbelow</groupId> -->
-<!-- 			<artifactId>furbelow</artifactId> -->
-<!-- 			<version>1.0</version> -->
-<!-- 			<scope>compile</scope> -->
-<!-- 		</dependency> -->
-
 		<dependency>
 			<groupId>bouncycastle</groupId>
 			<artifactId>bcprov-jdk15</artifactId>
@@ -126,7 +119,7 @@
 								<index>true</index>
 								<manifest>
 <!-- 									<mainClass>grisu.jython.JythonStartWrapper</mainClass> -->
-										<mainClass>grisu.jython.Session</mainClass>
+										<mainClass>grisu.Grython</mainClass>
 								</manifest>
 								<manifestEntries>
 									<Class-Path>bcprov.jar bcprov-jdk15-145.jar local-backend.jar
