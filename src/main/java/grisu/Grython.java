@@ -31,7 +31,7 @@ public class Grython extends GrisuCliClient {
 
 		Grython s = new Grython(args);
 
-		execute(s);
+		execute(s, false);
 		// runClient();
 	}
 
