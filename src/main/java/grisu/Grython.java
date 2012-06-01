@@ -2,6 +2,7 @@ package grisu;
 
 import grisu.control.ServiceInterface;
 import grisu.frontend.control.login.LoginManagerNew;
+import grisu.frontend.view.cli.DefaultCliParameters;
 import grisu.frontend.view.cli.GrisuCliClient;
 import grith.gridsession.SessionClient;
 import grith.jgrith.cred.Cred;
@@ -10,7 +11,7 @@ import org.python.util.jython;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Grython extends GrisuCliClient {
+public class Grython extends GrisuCliClient<DefaultCliParameters> {
 
 	public static final Logger myLogger = LoggerFactory
 			.getLogger(SessionClient.class);
@@ -21,7 +22,6 @@ public class Grython extends GrisuCliClient {
 
 	public static boolean isLoggedIn = false;
 
-
 	/**
 	 * @param args
 	 */
@@ -29,25 +29,33 @@ public class Grython extends GrisuCliClient {
 
 		LoginManagerNew.initGrisuClient("grython");
 
-		Grython s = new Grython(args);
+		DefaultCliParameters params = new DefaultCliParameters();
 
-		execute(s, false);
-		// runClient();
+		Grython s = null;
+		try {
+			s = new Grython(params, args);
+		} catch (Exception e) {
+			System.err.println("Could not start grython: "
+					+ e.getLocalizedMessage());
+			System.exit(1);
+		}
+		s.run();
+
 	}
 
-
-	public Grython(String[] args) {
-		super(args);
+	public Grython(DefaultCliParameters params, String[] args) throws Exception {
+		super(params, args);
 	}
 
 	@Override
-	public void run() {
+	protected void run() {
 		try {
 
 			credential = getCredential();
 			serviceInterface = getServiceInterface();
 
-			jython.main(getOtherParameters().toArray(new String[] {}));
+			jython.main(getCliParameters().getOtherParams().toArray(
+					new String[] {}));
 
 		} catch (Exception e) {
 			System.err.println("Error: " + e.getLocalizedMessage());
