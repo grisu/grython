@@ -2,5 +2,5 @@
 
 unset DISPLAY
 export JAVA_OPTS="-Djava.awt.headless=true -Xms128m -Xmx128m"
-java ${JAVA_OPTS} -jar /usr/local/lib/grisu/grython-binary.jar $@
+java ${JAVA_OPTS} -cp /usr/local/lib/grisu/grython-binary.jar grisu.Grython $@
 
