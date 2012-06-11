@@ -1,7 +1,7 @@
 package grisu;
 
 import grisu.control.ServiceInterface;
-import grisu.frontend.control.login.LoginManagerNew;
+import grisu.frontend.control.login.LoginManager;
 import grisu.frontend.view.cli.DefaultCliParameters;
 import grisu.frontend.view.cli.GrisuCliClient;
 import grith.gridsession.SessionClient;
@@ -27,7 +27,7 @@ public class Grython extends GrisuCliClient<DefaultCliParameters> {
 	 */
 	public static void main(String[] args) {
 
-		LoginManagerNew.initGrisuClient("grython");
+		LoginManager.initGrisuClient("grython");
 
 		DefaultCliParameters params = new DefaultCliParameters();
 
