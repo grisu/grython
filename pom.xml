@@ -22,7 +22,6 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
-
 	</repositories>	
 	
 
@@ -35,13 +34,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>furbelow</groupId>
-			<artifactId>furbelow</artifactId>
-			<version>1.0</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>bouncycastle</groupId>
 			<artifactId>bcprov-jdk15</artifactId>
 			<version>145</version>
@@ -49,6 +41,11 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>grith</groupId>
+			<artifactId>grid-session</artifactId>
+			<version>0.1-rc2-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 
@@ -77,7 +74,7 @@
 				<directory>src/main/jython</directory>
 			</resource>
 		</resources>
-		<plugins>		
+		<plugins>
 			<plugin>
 				<groupId>com.google.code.maven-replacer-plugin</groupId>
 				<artifactId>maven-replacer-plugin</artifactId>
@@ -103,8 +100,8 @@
 					<!-- replace it with the maven project version -->
 					<value>${project.version}</value>
 				</configuration>
-			</plugin>	
-			
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2</version>
@@ -121,7 +118,7 @@
 							<archive>
 								<index>true</index>
 								<manifest>
-									<mainClass>grisu.jython.JythonStartWrapper</mainClass>
+										<mainClass>grisu.Grython</mainClass>
 								</manifest>
 								<manifestEntries>
 									<Class-Path>bcprov.jar bcprov-jdk15-145.jar local-backend.jar
@@ -241,7 +238,7 @@
 												<filemode>755</filemode>
 											</mapper>
 										</data>
-												
+
 
 									</dataSet>
 
@@ -332,6 +329,9 @@
 	<parent>
 		<groupId>nz.org.nesi</groupId>
 		<artifactId>nesi</artifactId>
-		<version>0.17</version>
+		<version>0.11</version>
 	</parent>
+	<properties>
+		<grisu.version>0.5-rc2-SNAPSHOT</grisu.version>
+	</properties>
 </project>
