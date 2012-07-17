@@ -41,11 +41,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>grith</groupId>
-			<artifactId>grid-session</artifactId>
-			<version>0.1-rc2-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 
