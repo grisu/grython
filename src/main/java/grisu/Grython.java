@@ -2,16 +2,20 @@ package grisu;
 
 import grisu.control.ServiceInterface;
 import grisu.frontend.control.login.LoginManager;
-import grisu.frontend.view.cli.DefaultCliParameters;
 import grisu.frontend.view.cli.GrisuCliClient;
+import grisu.frontend.view.cli.GrisuCliParameters;
 import grith.gridsession.SessionClient;
 import grith.jgrith.cred.Cred;
+import grith.jgrith.utils.CommandlineArgumentHelpers;
+
+import java.util.Arrays;
+import java.util.List;
 
 import org.python.util.jython;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Grython extends GrisuCliClient<DefaultCliParameters> {
+public class Grython extends GrisuCliClient<GrisuCliParameters> {
 
 	public static final Logger myLogger = LoggerFactory
 			.getLogger(SessionClient.class);
@@ -21,6 +25,8 @@ public class Grython extends GrisuCliClient<DefaultCliParameters> {
 	public static Cred credential = null;
 
 	public static boolean isLoggedIn = false;
+	
+	public static List<String> cli_parameters;
 
 	/**
 	 * @param args
@@ -29,7 +35,7 @@ public class Grython extends GrisuCliClient<DefaultCliParameters> {
 
 		LoginManager.initGrisuClient("grython");
 
-		DefaultCliParameters params = new DefaultCliParameters();
+		GrisuCliParameters params = new GrisuCliParameters();
 
 		Grython s = null;
 		try {
@@ -43,8 +49,11 @@ public class Grython extends GrisuCliClient<DefaultCliParameters> {
 
 	}
 
-	public Grython(DefaultCliParameters params, String[] args) throws Exception {
+	public Grython(GrisuCliParameters params, String[] args) throws Exception {
 		super(params, args);
+		cli_parameters = Arrays.asList(CommandlineArgumentHelpers.extractNonGridParameters(new GrisuCliParameters(), args));
+		
+		
 	}
 
 	@Override
@@ -54,8 +63,7 @@ public class Grython extends GrisuCliClient<DefaultCliParameters> {
 			credential = getCredential();
 			serviceInterface = getServiceInterface();
 
-			jython.main(getCliParameters().getOtherParams().toArray(
-					new String[] {}));
+			jython.run(cli_parameters.toArray(new String[]{}));
 
 		} catch (Exception e) {
 			System.err.println("Error: " + e.getLocalizedMessage());
