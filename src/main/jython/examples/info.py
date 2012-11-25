@@ -11,10 +11,17 @@ from grisu.Grython import serviceInterface as si
 from grisu.model import GrisuRegistryManager
 import sys
 
-
-
-
+sys.argv.pop(0)
 registry = GrisuRegistryManager.getDefault(si)
+
+if sys.argv[0] == "--list":
+    
+    apps = registry.getResourceInformation().getAllApplications()
+    
+    for app in apps:
+        print app.getName()
+        
+    sys.exit(0)
 
 for app in sys.argv:
 
