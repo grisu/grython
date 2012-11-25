@@ -1,7 +1,7 @@
-Grisu Jython
-===========
+Grython
+=======
 
-The *Grisu Jython wrapper* is a Java package that contains both the [Grisu client library](https://github.com/grisu/grisu/wiki/Grisu-client-library) and a version of the [Jython](http://jython.org/) interpreter. Basically, it allows you to access all the convenience (Java) methods and objects of the *Grisu client library* via Python syntax. 
+*Grython* is a Java package that contains both the [Grisu client library](https://github.com/grisu/grisu/wiki/Grisu-client-library) and a version of the [Jython](http://jython.org/) interpreter. Basically, it allows you to access all the convenience (Java) methods and objects of the *Grisu client library* via Python syntax. 
 
 Beware, you can't run this package in a native Python environment. So, if you want to write a python script that relies on 3rd party modules which don't run in Jython (for example because they are written in C), you're (most likely) out of luck.
 
@@ -27,7 +27,7 @@ Documentation / Examples
 Usage
 ----------
 
-*grisu-jython* is started like so (if you used the NeSI tools installer package and adjusted your path):
+*grython* is started like so (if you used the NeSI tools installer package and adjusted your path):
 
     grython [-b <backend>]  [<script-name>.py]
 	
