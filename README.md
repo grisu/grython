@@ -10,23 +10,28 @@ Prerequisites
 ---------------------
 
 * Sun Java (version >= 6)
-* the [Grisu jython package]
-  * stable: http://code.ceres.auckland.ac.nz/stable-downloads/grisu-jython.jar or
-  * dev: http://code.ceres.auckland.ac.nz/snapshot-downloads/grisu-jython-dev.jar
+* (recommended) the [NeSI-tols installer package](http://code.ceres.auckland.ac.nz/downloads/nesi/nesi-tools-installer.jar) (make sure you check the '*grython*' option and put <install_dir>/bin in you system path -- in Windows this should be done for you, you might have to logout and login again to see the changes in your %PATH% environment variable)
+* or (for advanced users/developers) the Grisu jython jar:
+  * [stable](http://code.ceres.auckland.ac.nz/stable-downloads/grisu-jython.jar) or
+  * [dev](http://code.ceres.auckland.ac.nz/snapshot-downloads/grisu-jython-dev.jar)
 
 
 Documentation / Examples
 ---------------------------
 
-* Javadoc for the Grisu client library whose classes/methods can be used from jython: https://code.ceres.auckland.ac.nz/jenkins/job/Grisu-SNAPSHOT-Javadoc/javadoc/
-* Script examples can be found here: https://github.com/grisu/grisu-jython/tree/master/src/main/jython/examples
-* More examples (but pure Java): https://github.com/grisu/examples
+* Javadoc for the Grisu client library whose classes/methods can be used from jython: [javadoc](https://code.ceres.auckland.ac.nz/jenkins/job/Grisu-SNAPSHOT-Javadoc/javadoc/)
+* Script examples can be found here: [grython examples](https://github.com/grisu/grisu-jython/tree/master/src/main/jython/examples)
+* More examples (but pure Java): [grisu examples](https://github.com/grisu/examples)
 * Grisu wiki: https://github.com/grisu/grisu/wiki
 
 Usage
 ----------
 
-*grisu-jython* is started like so:
+*grisu-jython* is started like so (if you used the NeSI tools installer package and adjusted your path):
+
+    grython <script-name>.py
+	
+or, alternatively:
 
     java -jar grisu-jython.jar <script-name>.py
 
