@@ -1,11 +1,11 @@
-#! /usr/bin/grython -b nesi
+#! /usr/bin/grython -b testbed
 '''
 
 A simple job submission to show how to submit a job with input files.
 
-Created on 17/11/2009
+Created on 26/11/2012
 
-@author: markus
+@author: Markus Binsteiner
 '''
 
 from grisu.Grython import serviceInterface as si
@@ -27,9 +27,6 @@ job = JobObject(si);
 # set a unique jobname
 job.setTimestampJobname("diff_job")
 print 'Set jobname to: '+ job.getJobname()
-# setting the application. this means that grisu can figure out the submission location and
-# you don't have to do that manually
-job.setApplication("UnixCommands")
 
 # set the commandline that needs to be executed
 job.setCommandline('diff ' + file1Name+ ' ' + file2Name)
@@ -37,8 +34,8 @@ job.setCommandline('diff ' + file1Name+ ' ' + file2Name)
 job.addInputFileUrl(file1url);
 job.addInputFileUrl(file2url);
 
-# create the job on the backend and specify the VO to use
-job.createJob("/nz/nesi")
+# create the job on the backend
+job.createJob()
 print 'Submitting job...'
 # submit the job
 job.submitJob()
