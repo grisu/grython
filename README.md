@@ -164,6 +164,10 @@ Copy and paste the following code into a file called _diffJob.py_:
 
 Also, create two textfiles called _testfile1.txt_ and _testfile2.txt_ with slightly different content (in your current working directory).
 
+Exit the interactive console, if open:
+
+    >>> quit()
+
 Now, let's start the workflow:
 
     grython -b testbed diffJob.py testfile1.txt testfile2.txt
