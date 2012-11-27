@@ -4,7 +4,7 @@
 	<artifactId>grython</artifactId>
 	<groupId>grisu.frontend</groupId>
 	<name>Grython</name>
-	<version>0.5.6-SNAPSHOT</version>
+	<version>0.5.7-SNAPSHOT</version>
 
 	
 	<repositories>
@@ -63,7 +63,8 @@
 		<connection>scm:git:git://github.com/grisu/grython.git</connection>
 		<developerConnection>scm:git:git@github.com:grisu/grython.git</developerConnection>
 		<url>https://github.com/grisu/grython/tree/master</url>
-	</scm>
+	  <tag>HEAD</tag>
+  </scm>
 	<organization>
 		<name>Grisu open source project</name>
 		<url>https://github.com/grisu</url>
