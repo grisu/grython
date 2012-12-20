@@ -36,7 +36,7 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 		LoginManager.initGrisuClient("grython");
 
 		GrisuCliParameters params = new GrisuCliParameters();
-
+		
 		Grython s = null;
 		try {
 			s = new Grython(params, args);
@@ -62,7 +62,7 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 
 			credential = getCredential();
 			serviceInterface = getServiceInterface();
-
+			
 			jython.run(cli_parameters.toArray(new String[]{}));
 
 		} catch (Exception e) {
