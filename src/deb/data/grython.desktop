@@ -1,0 +1,23 @@
+[Desktop Entry]
+Categories=
+Comment=This starts an instance of the Grython interpreter
+Comment[en]=This starts an instance of the Grython interpreter
+Encoding=UTF-8
+Exec=/usr/bin/grython
+GenericName=
+GenericName[en]=
+Icon=/usr/local/lib/grisu/icons/grython.png
+MimeType=
+Name=Grython
+Name[en]=Grython
+Path=
+ServiceTypes=
+SwallowExec=
+SwallowTitle=
+Terminal=true
+TerminalOptions=
+Type=Application
+URL=
+X-KDE-SubstituteUID=false
+X-KDE-Username=root
+
