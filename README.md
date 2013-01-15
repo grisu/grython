@@ -10,10 +10,9 @@ Prerequisites
 ---------------------
 
 * Sun Java (version >= 6)
-* (recommended) the [NeSI-tols installer package](http://code.ceres.auckland.ac.nz/downloads/nesi/nesi-tools-installer.jar) (make sure you check the *'grython'* option and put [install_dir]/bin in you system path -- in Windows this should be done already done for you by the installer, you might have to logout and login again to see the changes in your %PATH% environment variable)
-* or (for advanced users/developers) the Grisu jython jar:
-  * [stable](http://code.ceres.auckland.ac.nz/stable-downloads/grython.jar) or
-  * [dev](http://code.ceres.auckland.ac.nz/snapshot-downloads/grython-dev.jar)
+* (recommended) the NeSI-tools installer package: [Windows](http://code.ceres.auckland.ac.nz/downloads/nesi/nesi-tools.msi), [Mac OS X](http://code.ceres.auckland.ac.nz/downloads/nesi/nesi-tools.pkg) or [cross-OS](http://code.ceres.auckland.ac.nz/downloads/nesi/nesi-tools-installer.jar) (make sure you check the *'grython'* option and put [install_dir]/bin in you system path)
+* or (for advanced users/developers) the Grisu jython jar: [grython.jar](http://code.ceres.auckland.ac.nz/stable-downloads/grython.jar)
+
 
 
 Documentation / Examples
