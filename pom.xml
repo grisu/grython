@@ -407,6 +407,6 @@
 		<version>0.23</version>
 	</parent>
 	<properties>
-		<grisu.version>0.5.14</grisu.version>
+		<grisu.version>0.5.15</grisu.version>
 	</properties>
 </project>

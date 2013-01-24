@@ -19,8 +19,8 @@ import sys
 
 
 megabeast_path = '/share/apps/ultrabeast/ultrabeast'
-#remote_home_dir = '/home/mbin029'
-remote_home_dir = os.getenv("HOME")
+remote_home_dir = '/home/mbin029'
+#remote_home_dir = os.getenv("HOME")
 
         
 uem = GrisuRegistryManager.getDefault(si).getUserEnvironmentManager()

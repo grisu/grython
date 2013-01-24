@@ -27,6 +27,8 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 	public static boolean isLoggedIn = false;
 	
 	public static List<String> cli_parameters;
+	
+	public final String[] args;
 
 	/**
 	 * @param args
@@ -51,6 +53,7 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 
 	public Grython(GrisuCliParameters params, String[] args) throws Exception {
 		super(params, args);
+		this.args = args;
 		cli_parameters = Arrays.asList(CommandlineArgumentHelpers.extractNonGridParameters(new GrisuCliParameters(), args));
 		
 		
@@ -59,11 +62,16 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 	@Override
 	protected void run() {
 		try {
-
-			credential = getCredential();
-			serviceInterface = getServiceInterface();
 			
-			jython.run(cli_parameters.toArray(new String[]{}));
+			if (getLoginParameters().isNologin()) {
+				jython.run(args);
+			} else {
+
+				credential = getCredential();
+				serviceInterface = getServiceInterface();
+			
+				jython.run(cli_parameters.toArray(new String[]{}));
+			}
 
 		} catch (Exception e) {
 			System.err.println("Error: " + e.getLocalizedMessage());
