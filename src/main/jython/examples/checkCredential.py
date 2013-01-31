@@ -40,9 +40,22 @@ else:
 
 if create_new_cred:
     
-    cred = AbstractCred.loadFromConfig(None, CliCallback());
+    try:
+        cred = AbstractCred.loadFromConfig(None, CliCallback());
+    except:
+        instance = sys.exc_info()[1]
+        print "Could not create credential: " + instance.getLocalizedMessage()
+        sys.exit(1)
+        
     lifetime = cred.getRemainingLifetime()
+    
+    if lifetime < threshold:
+        print "Credential created, but lifetime "+str(lifetime)+" not longer than threshold ( "+str(threshold)+" sec )"
+        sys.exit(1)
+    
     lifetime_string = WalltimeUtils.convertSeconds(lifetime)
     print "Credential created, lifetime: "+lifetime_string+" ( "+str(lifetime)+" sec )"
+    sys.exit(0)
     
-
+else:
+    sys.exit(0)

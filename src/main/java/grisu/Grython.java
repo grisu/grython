@@ -43,6 +43,7 @@ public class Grython extends GrisuCliClient<GrisuCliParameters> {
 		try {
 			s = new Grython(params, args);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.err.println("Could not start grython: "
 					+ e.getLocalizedMessage());
 			System.exit(1);
