@@ -4,7 +4,7 @@
 	<artifactId>grython</artifactId>
 	<groupId>grisu.frontend</groupId>
 	<name>Grython</name>
-	<version>0.7-SNAPSHOT</version>
+	<version>0.6.2-SNAPSHOT</version>
 
 	
 	<repositories>
@@ -412,6 +412,6 @@
 		<version>0.23</version>
 	</parent>
 	<properties>
-		<grisu.version>0.6</grisu.version>
+		<grisu.version>0.6.2-SNAPSHOT</grisu.version>
 	</properties>
 </project>
