@@ -41,11 +41,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>grith</groupId>
-			<artifactId>grid-session</artifactId>
-			<version>0.1.15</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>grith</groupId>-->
+			<!--<artifactId>grid-session</artifactId>-->
+			<!--<version>0.1.15</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 
@@ -412,6 +412,6 @@
 		<version>1.0</version>
 	</parent>
 	<properties>
-		<grisu.version>0.7-SNAPSHOT</grisu.version>
+		<grisu.version>0.7</grisu.version>
 	</properties>
 </project>
