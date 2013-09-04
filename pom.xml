@@ -4,9 +4,9 @@
 	<artifactId>grython</artifactId>
 	<groupId>grisu.frontend</groupId>
 	<name>Grython</name>
-	<version>0.8-SNAPSHOT</version>
+	<version>0.7.6-SNAPSHOT</version>
 
-	
+
 	<repositories>
 		<repository>
 			<id>bestgrid.public.release</id>
@@ -22,8 +22,8 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
-	</repositories>	
-	
+	</repositories>
+
 
 	<dependencies>
 		<dependency>
@@ -146,8 +146,8 @@
 					<tagNameFormat>@{project.version}</tagNameFormat>
 					<releaseProfiles>deb,rpm</releaseProfiles>
 				</configuration>
-			</plugin>				
-			
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -233,7 +233,7 @@
 										</replacement>
 									</replacements>
 								</configuration>
-							</execution>							
+							</execution>
 						</executions>
 					</plugin>
 
@@ -296,7 +296,7 @@
 												<filemode>755</filemode>
 											</mapper>
 										</data>
-										
+
 									</dataSet>
 
 								</configuration>
@@ -391,9 +391,9 @@
 							<preinstallScriptlet>
 								<script>echo "Installing Grython..."</script>
 							</preinstallScriptlet>
-							<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile> 
-								<fileEncoding>utf-8</fileEncoding> </postinstallScriptlet> <preremoveScriptlet> 
-								<scriptFile>src/main/scripts/preremove</scriptFile> <fileEncoding>utf-8</fileEncoding> 
+							<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile>
+								<fileEncoding>utf-8</fileEncoding> </postinstallScriptlet> <preremoveScriptlet>
+								<scriptFile>src/main/scripts/preremove</scriptFile> <fileEncoding>utf-8</fileEncoding>
 								</preremoveScriptlet> -->
 						</configuration>
 					</plugin>
@@ -412,6 +412,6 @@
 		<version>1.0</version>
 	</parent>
 	<properties>
-		<grisu.version>0.7</grisu.version>
+		<grisu.version>0.7.6-SNAPSHOT</grisu.version>
 	</properties>
 </project>

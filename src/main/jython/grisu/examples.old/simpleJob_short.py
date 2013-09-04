@@ -1,7 +1,7 @@
 from grisu.frontend.control.login import LoginManager
 from grisu.frontend.model.job import JobObject
 
-si = LoginManager.loginCommandline("BeSTGRID-DEV")
+si = LoginManager.loginCommandline("BeSTGRID")
 
 print 'Logged in.'
 
