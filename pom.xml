@@ -4,9 +4,9 @@
 	<artifactId>grython</artifactId>
 	<groupId>grisu.frontend</groupId>
 	<name>Grython</name>
-	<version>0.5.19-SNAPSHOT</version>
+	<version>0.8.2</version>
 
-	
+
 	<repositories>
 		<repository>
 			<id>bestgrid.public.release</id>
@@ -22,8 +22,8 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
-	</repositories>	
-	
+	</repositories>
+
 
 	<dependencies>
 		<dependency>
@@ -41,11 +41,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>grith</groupId>
-			<artifactId>grid-session</artifactId>
-			<version>0.1.15</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>grith</groupId>-->
+			<!--<artifactId>grid-session</artifactId>-->
+			<!--<version>0.1.15</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 
@@ -63,7 +63,7 @@
 		<connection>scm:git:git://github.com/grisu/grython.git</connection>
 		<developerConnection>scm:git:git@github.com:grisu/grython.git</developerConnection>
 		<url>https://github.com/grisu/grython/tree/master</url>
-	  <tag>HEAD</tag>
+	  <tag>0.8.2</tag>
   </scm>
 	<organization>
 		<name>Grisu open source project</name>
@@ -146,8 +146,8 @@
 					<tagNameFormat>@{project.version}</tagNameFormat>
 					<releaseProfiles>deb,rpm</releaseProfiles>
 				</configuration>
-			</plugin>				
-			
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -233,7 +233,7 @@
 										</replacement>
 									</replacements>
 								</configuration>
-							</execution>							
+							</execution>
 						</executions>
 					</plugin>
 
@@ -296,7 +296,7 @@
 												<filemode>755</filemode>
 											</mapper>
 										</data>
-										
+
 									</dataSet>
 
 								</configuration>
@@ -391,9 +391,9 @@
 							<preinstallScriptlet>
 								<script>echo "Installing Grython..."</script>
 							</preinstallScriptlet>
-							<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile> 
-								<fileEncoding>utf-8</fileEncoding> </postinstallScriptlet> <preremoveScriptlet> 
-								<scriptFile>src/main/scripts/preremove</scriptFile> <fileEncoding>utf-8</fileEncoding> 
+							<!-- <postinstallScriptlet> <scriptFile>src/main/scripts/postinstall</scriptFile>
+								<fileEncoding>utf-8</fileEncoding> </postinstallScriptlet> <preremoveScriptlet>
+								<scriptFile>src/main/scripts/preremove</scriptFile> <fileEncoding>utf-8</fileEncoding>
 								</preremoveScriptlet> -->
 						</configuration>
 					</plugin>
@@ -409,9 +409,9 @@
 	<parent>
 		<groupId>nz.org.nesi</groupId>
 		<artifactId>nesi</artifactId>
-		<version>0.23</version>
+		<version>1.0</version>
 	</parent>
 	<properties>
-		<grisu.version>0.5.33</grisu.version>
+		<grisu.version>0.8.2</grisu.version>
 	</properties>
 </project>
