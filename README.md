@@ -83,8 +83,8 @@ Or, we can get some information about the backend we are connected to:
 
 Now, let's do something useful and submit a job:
 
-    >>> from grisu.frontend.model.job import JobObject
-	>>> job = JobObject(si)
+    >>> from grisu.frontend.model.job import GrisuJob
+	>>> job = GrisuJob(si)
 	>>> job.setJobname("grython_demo_job")
     >>> job.setCommandline("echo \"Hello World\"")
 	>>> job.createJob()  
@@ -118,7 +118,7 @@ Copy and paste the following code into a file called _diffJob.py_:
     '''
     
     from grisu.Grython import serviceInterface as si
-    from grisu.frontend.model.job import JobObject
+    from grisu.frontend.model.job import GrisuJob
     from grisu.model import FileManager
     import sys
     
@@ -132,7 +132,7 @@ Copy and paste the following code into a file called _diffJob.py_:
     
     print 'Creating job...'
     # create the job object
-    job = JobObject(si);
+    job = GrisuJob(si);
     # set a unique jobname
     job.setTimestampJobname("diff_job")
     print 'Set jobname to: '+ job.getJobname()
