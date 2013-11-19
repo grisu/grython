@@ -43,7 +43,7 @@ On your first run (or whenever your session credential expires), you will be ask
 
 Also, we are login into the test backend (alias: testbed):
 
-    grython -b testbed
+    grython -b testbed --login
 
     [1] Institution login
     [2] Institution login (using: 'The University of Auckland')
@@ -57,6 +57,9 @@ Also, we are login into the test backend (alias: testbed):
     [OpenJDK 64-Bit Server VM (Sun Microsystems Inc.)] on java1.6.0_24
     Type "help", "copyright", "credits" or "license" for more information.
     >>> 
+
+The '--login' option forces authentication, otherwise, if you already have an existing credential it'll re-use that, which is quite handy for scripting.
+If you want to use our production system, just ommit the '-b testbed' options. And, once you got started, don't use the '--login' option.
 
 ### Interactive console
 
