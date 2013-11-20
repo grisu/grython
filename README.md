@@ -172,7 +172,7 @@ Exit the interactive console, if open:
 
 Now, let's start the workflow:
 
-    grython -b testbed diffJob.py testfile1.txt testfile2.txt
+    grython -b testbed --login diffJob.py testfile1.txt testfile2.txt
     Parsing commandline arguments...
     Creating job...
     Set jobname to: diff_job_2012.11.26_12.21.29.288
